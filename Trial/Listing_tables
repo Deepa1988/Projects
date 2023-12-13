@@ -1,0 +1,12 @@
+<?php
+// Usage without mysql_list_dbs()
+$conn = mysqli_connect("localhost","root","","staff");
+if($stmt = $conn->query("SHOW TABLES")){
+  echo "No of records : ".$stmt->num_rows."<br>";
+  while ($row = $stmt->fetch_array()) {
+echo $row[0]."<br>";
+  }
+}else{
+echo $connection->error;
+}
+?>

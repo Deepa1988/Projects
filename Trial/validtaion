@@ -1,0 +1,29 @@
+<html>
+<body>
+<?php
+$name="";
+$error="";
+if(isset($_POST["submit"]))
+{
+if(empty($_POST["name"]))
+echo "Name Field is empty";
+else
+{
+$name=$_POST["name"];
+if(!preg_match("/^[a-zA-Z ]$/",$name))
+$error="Names can contain only alphabets and spaces";
+}
+if($error=="")
+ echo "name entered is in correct format";
+ else
+ echo"name entered is not in correct format";
+}
+}
+?>
+<form method="post">
+Enter name:<input type="text" name="name">
+<input type="submit" name="submit">
+</form>
+
+</body>
+</html>
